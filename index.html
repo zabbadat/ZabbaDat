@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon — A Simple Beautiful Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a21;
+      --accent: #7c5cff;
+      --accent-2: #00d4ff;
+      --text: #f0f0f5;
+      --muted: #a0a0b0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 15, 19, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 8%;
+      background: radial-gradient(ellipse at top right, rgba(124, 92, 255, 0.15), transparent 50%),
+                  radial-gradient(ellipse at bottom left, rgba(0, 212, 255, 0.08), transparent 50%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(124, 92, 255, 0.35);
+    }
+
+    section {
+      padding: 6rem 8%;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.25s;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+
+    .card h3 { margin-bottom: 0.8rem; font-size: 1.3rem; }
+    .card p { color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 700px) {
+      nav a { margin-left: 1.2rem; font-size: 0.9rem; }
+      .hero { padding: 0 6%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Hori<span>zon</span></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Build something<br><span>worth sharing.</span></h1>
+    <p>A clean, fast, and modern starting point. Replace the text, colors, and sections with whatever you actually want to say.</p>
+    <a href="#contact" class="btn">Get in touch</a>
+  </section>
+
+  <section id="about">
+    <h2>What this is</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Simple</h3>
+        <p>One file. No frameworks required. Just open it and it works.</p>
+      </div>
+      <div class="card">
+        <h3>Fast</h3>
+        <p>No bloat. Loads instantly and looks good on phones.</p>
+      </div>
+      <div class="card">
+        <h3>Yours</h3>
+        <p>Change the colors, copy, and layout. Make it whatever you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Next steps</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Edit the text</h3>
+        <p>Swap the headlines and paragraphs for your own story.</p>
+      </div>
+      <div class="card">
+        <h3>2. Change the colors</h3>
+        <p>Update the CSS variables at the top of the &lt;style&gt; block.</p>
+      </div>
+      <div class="card">
+        <h3>3. Add your content</h3>
+        <p>Drop in images, a form, or extra pages as you grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Say hello</h2>
+    <p style="color: var(--muted); max-width: 500px;">
+      This is just a placeholder. Replace this section with a real contact form, email link, or social links.
+    </p>
+  </section>
+
+  <footer>
+    Built as a starting point · Customize it however you like
+  </footer>
+</body>
+</html>
